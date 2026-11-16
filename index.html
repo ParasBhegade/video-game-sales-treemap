@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101512">
+    <meta name="description" content="Explore video game sales as a colorful, interactive treemap.">
+    <title>PLAY / FIELD — Video game sales</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="topbar">
+        <a class="wordmark" href="#" aria-label="Play Field home"><span class="wordmark-mark">P</span> PLAY<span class="wordmark-divider">/</span>FIELD</a>
+        <span class="topbar-note"><span class="status-dot"></span> DATA ATLAS <span class="topbar-year">— VOL. 01</span></span>
+      </header>
+
+      <section class="intro" aria-labelledby="title">
+        <div class="intro-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> THE SHAPE OF PLAY</p>
+          <h1 id="title">Big hits.<br><span>By the numbers.</span></h1>
+          <p id="description" class="description">A landscape of video game sales, where every block tells a story. The bigger the tile, the bigger the game.</p>
+        </div>
+        <aside class="intro-stat" aria-label="Chart summary">
+          <span class="stat-label">THE COLLECTION</span>
+          <span class="stat-value" id="game-count">—</span>
+          <span class="stat-caption">games in the chart</span>
+          <span class="stat-rule"></span>
+          <span class="stat-label">MEASURED IN</span>
+          <span class="stat-unit">MILLIONS <span>OF UNITS</span></span>
+        </aside>
+      </section>
+
+      <section class="visualization" aria-label="Video game sales treemap">
+        <div class="chart-toolbar">
+          <div class="toolbar-title"><span class="toolbar-index">01</span> GLOBAL SALES <span class="toolbar-separator">/</span> ALL PLATFORMS</div>
+          <div class="toolbar-hint"><span class="hint-ring"></span> HOVER A TILE TO EXPLORE</div>
+        </div>
+        <div id="chart-shell" class="chart-shell">
+          <svg id="treemap" role="img" aria-labelledby="title description"></svg>
+          <div id="tooltip" class="tooltip" role="status" aria-hidden="true"></div>
+          <div id="chart-error" class="chart-error" role="alert" hidden></div>
+        </div>
+        <div class="axis-captions" aria-hidden="true">
+          <span>MAP WIDTH <i></i></span>
+          <span><i></i> MAP HEIGHT</span>
+        </div>
+      </section>
+
+      <section class="legend-section" aria-label="Game genre legend">
+        <div class="legend-heading">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-line"></span> READ THE MAP</p>
+            <h2>Genres, at a glance.</h2>
+          </div>
+          <p class="legend-note">Each color marks a genre.<br>Each tile is one game.</p>
+        </div>
+        <div id="legend" class="legend"></div>
+      </section>
+
+      <footer class="footer">
+        <span>PLAY / FIELD <span class="footer-dot">•</span> AN INTERACTIVE DATA STUDY</span>
+        <span>SALES SHOWN IN MILLIONS <span class="footer-dot">•</span> HOVER TO INSPECT</span>
+      </footer>
+    </main>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
